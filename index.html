@@ -16,10 +16,12 @@
       font-family: 'Playfair Display', serif;
       color: #f0f0f0;
       background-color: #111;
-      /* partial moving gradient as background */
-      background-image: radial-gradient(circle at center,
-        rgba(88,125,114,0.1) 0%,
-        transparent 70%
+
+      /* partial moving gradient spot: skin tone → blue */
+      background-image: radial-gradient(
+        circle at center,
+        rgba(241,194,125,0.15) 0%,   /* soft skin tone */
+        rgba(66,135,245,0.15) 70%     /* muted blue */
       );
       background-size: 200% 200%;
       background-position: 20% 20%;
@@ -28,7 +30,6 @@
       overflow-x: hidden;
     }
     body:hover {
-      /* shift the gradient spot on hover */
       background-position: 80% 80%;
     }
 
@@ -104,7 +105,6 @@
       width: 24px;
       height: 24px;
       margin-right: 0.5em;
-      /* make your black SVGs show up as white */
       filter: invert(1);
     }
 
@@ -154,7 +154,7 @@
       </div>
       <div class="contact">
         <a href="mailto:marcy.davis@tcu.edu">
-          <img src="images/email.svg" alt="Email">
+          <img src="images/email.svg" alt="Email" width="20" height="20"> 
           marcy.davis@tcu.edu
         </a>
       </div>
