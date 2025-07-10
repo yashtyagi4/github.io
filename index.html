@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Marcy Davis | Sculpture & Installation</title>
 
-  <!-- Playfair Display -->
+  <!-- Font: Playfair Display -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
-    /* ---- Reset & Base ---- */
+    /* ---- Background and Gradient Animation Base ---- */
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html, body {
       height: 100%;
@@ -21,7 +21,7 @@
       background-image: radial-gradient(
         circle at center,
         rgba(241,194,125,0.15) 0%,   /* soft skin tone */
-        rgba(66,135,245,0.15) 70%     /* muted blue */
+        rgba(10,50,10,0.15) 70%     /* dark royal green */
       );
       background-size: 200% 200%;
       background-position: 20% 20%;
@@ -68,7 +68,7 @@
       animation: fadeIn 1s ease forwards 0.7s;
     }
 
-    /* ---- Image placeholder (30% larger) ---- */
+    /* ---- Image ---- */
     .image-placeholder {
       width: 585px;
       height: 780px;
@@ -87,7 +87,7 @@
       display: block;
     }
 
-    /* ---- Footer ---- */
+    /* ---- Footer: Contacts ---- */
     .footer {
       display: flex;
       justify-content: flex-end;
@@ -108,7 +108,7 @@
       filter: invert(1);
     }
 
-    /* ---- Responsive ---- */
+    /* ---- Mobile ---- */
     @media (max-width: 768px) {
       .main {
         flex-direction: column;
