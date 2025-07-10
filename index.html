@@ -16,12 +16,10 @@
       font-family: 'Playfair Display', serif;
       color: #f0f0f0;
       background-color: #111;
-
-      /* partial moving gradient spot: skin tone → blue */
       background-image: radial-gradient(
         circle at center,
-        rgba(241,194,125,0.15) 0%,   /* soft skin tone */
-        rgba(10,50,10,0.15) 70%     /* dark royal green */
+        rgba(241,194,125,0.05) 0%,   /* soft skin tone */
+        rgba(10,50,10,0.15) 70%       /* dark royal green */
       );
       background-size: 200% 200%;
       background-position: 20% 20%;
@@ -99,13 +97,24 @@
       align-items: center;
       color: inherit;
       text-decoration: none;
-      font-size: 1rem;
+      font-size: 1rem; /* fallback/mobile */
     }
     .contact a img {
       width: 24px;
       height: 24px;
       margin-right: 0.5em;
       filter: invert(1);
+    }
+
+    /* ---- Desktop-only footer sizing ---- */
+    @media (min-width: 769px) {
+      .contact a {
+        font-size: 1.25rem;
+      }
+      .contact a img {
+        width: 28px;
+        height: 28px;
+      }
     }
 
     /* ---- Mobile ---- */
@@ -154,7 +163,7 @@
       </div>
       <div class="contact">
         <a href="mailto:marcy.davis@tcu.edu">
-          <img src="images/email.svg" alt="Email" width="20" height="20"> 
+          <img src="images/email.svg" alt="Email" width="24" height="24">
           marcy.davis@tcu.edu
         </a>
       </div>
