@@ -16,28 +16,20 @@
       font-family: 'Playfair Display', serif;
       color: #f0f0f0;
       background-color: #111;
-      position: relative;
+      /* partial moving gradient as background */
+      background-image: radial-gradient(circle at center,
+        rgba(88,125,114,0.1) 0%,
+        transparent 70%
+      );
+      background-size: 200% 200%;
+      background-position: 20% 20%;
+      background-repeat: no-repeat;
+      transition: background-position 5s ease;
       overflow-x: hidden;
     }
-
-    /* partial gradient “spot” */
-    body::before {
-      content: "";
-      position: absolute;
-      width: 40%;
-      height: 40%;
-      top: 0;
-      left: 0;
-      background: radial-gradient(circle at center,
-        rgba(88,125,114,0.1),
-        transparent 70%);
-      transition: top 5s ease, left 5s ease;
-      pointer-events: none;
-    }
-    /* move the spot on hover */
-    body:hover::before {
-      top: 60%;
-      left: 60%;
+    body:hover {
+      /* shift the gradient spot on hover */
+      background-position: 80% 80%;
     }
 
     .container {
@@ -75,10 +67,10 @@
       animation: fadeIn 1s ease forwards 0.7s;
     }
 
-    /* ---- Image placeholder (now real image) ---- */
+    /* ---- Image placeholder (30% larger) ---- */
     .image-placeholder {
-      width: 450px;
-      height: 600px;
+      width: 585px;
+      height: 780px;
       background: #222;
       border-radius: 1rem;
       overflow: hidden;
@@ -112,6 +104,8 @@
       width: 24px;
       height: 24px;
       margin-right: 0.5em;
+      /* make your black SVGs show up as white */
+      filter: invert(1);
     }
 
     /* ---- Responsive ---- */
