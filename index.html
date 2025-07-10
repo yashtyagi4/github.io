@@ -105,9 +105,8 @@
       margin-right: 0.5em;
       filter: invert(1);
     }
-
-    /* ---- Shrink only the email icon ---- */
     .contact a img.email-icon {
+      /* keeps email slightly smaller on desktop */
       width: 21px;
       height: 21px;
     }
@@ -121,15 +120,13 @@
         width: 28px;
         height: 28px;
       }
-      /* desktop override for email too */
       .contact a img.email-icon {
         width: 21px;
         height: 21px;
-        margin-left: 5em;
       }
     }
 
-    /* ---- Mobile ---- */
+    /* ---- Mobile: force matching icon sizes ---- */
     @media (max-width: 768px) {
       .main {
         flex-direction: column;
@@ -144,6 +141,11 @@
         width: 80%;
         height: auto;
         aspect-ratio: 3/4;
+      }
+      /* override both icons to be identical on mobile */
+      .contact a img {
+        width: 20px;
+        height: 20px;
       }
     }
   </style>
@@ -175,7 +177,6 @@
       </div>
       <div class="contact">
         <a href="mailto:marcy.davis@tcu.edu">
-          <!-- added class here -->
           <img src="images/email.svg" alt="Email" class="email-icon">
           marcy.davis@tcu.edu
         </a>
