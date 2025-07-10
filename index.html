@@ -5,126 +5,113 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Marcy Davis | Sculpture & Installation</title>
 
-  <!-- Google Font -->
+  <!-- Playfair Display -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
-    /* ---- Base reset ---- */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    /* ---- Reset & Base ---- */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     html, body {
       height: 100%;
       font-family: 'Playfair Display', serif;
-      background: linear-gradient(45deg, #111111, #1a1a1a, #111111);
-      background-size: 600% 600%;
-      animation: gradientShift 30s ease infinite;
       color: #f0f0f0;
+      background-color: #111;
+      position: relative;
       overflow-x: hidden;
     }
 
-    @keyframes gradientShift {
-      0%   { background-position: 0% 50%; }
-      50%  { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+    /* partial gradient “spot” */
+    body::before {
+      content: "";
+      position: absolute;
+      width: 40%;
+      height: 40%;
+      top: 0;
+      left: 0;
+      background: radial-gradient(circle at center,
+        rgba(88,125,114,0.1),
+        transparent 70%);
+      transition: top 5s ease, left 5s ease;
+      pointer-events: none;
+    }
+    /* move the spot on hover */
+    body:hover::before {
+      top: 60%;
+      left: 60%;
     }
 
-    /* ---- Layout ---- */
     .container {
-      min-height: 100%;
       display: flex;
       flex-direction: column;
+      min-height: 100%;
     }
+
+    /* ---- Main content ---- */
     .main {
       flex: 1;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 2rem;
+      padding: 2rem 5rem;
+      gap: 4rem;
     }
-    .left, .right {
-      flex: 1;
-    }
-    .left {
-      padding-right: 2rem;
-      animation: fadeIn 1s ease forwards;
-    }
-    .right {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      animation: fadeIn 1s ease forwards 0.5s;
-    }
+    .left  { flex: 1; animation: fadeIn 1s ease forwards; }
+    .right { flex: 1; display: flex; align-items: center; justify-content: center; animation: fadeIn 1s ease forwards 0.5s; }
 
-    /* ---- Text Animations ---- */
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(10px); }
       to   { opacity: 1; transform: translateY(0); }
     }
     .name {
       font-size: 3rem;
-      margin-bottom: 2rem;
+      margin-bottom: 4rem;
       opacity: 0;
       animation: fadeIn 1s ease forwards;
     }
     .bio {
-      line-height: 1.6;
       font-size: 1.225rem;
+      line-height: 1.6;
       opacity: 0;
       animation: fadeIn 1s ease forwards 0.7s;
     }
 
-    /* ---- Image placeholder & hover ---- */
+    /* ---- Image placeholder (now real image) ---- */
     .image-placeholder {
-      width: 300px;
-      height: 400px;
+      width: 450px;
+      height: 600px;
       background: #222;
       border-radius: 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.25rem;
-      color: #555;
       overflow: hidden;
-      transition: transform 0.5s ease;
+      transition: transform 0.3s ease;
     }
     .image-placeholder:hover {
-      transform: scale(1.03);
+      transform: scale(1.05);
     }
-    /* Replace this with your actual image, e.g.
-       <img src="marcy.jpg" alt="Marcy Davis" class="image" />
-    */
     .image-placeholder img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      display: block;
     }
 
-    /* ---- Footer contacts ---- */
+    /* ---- Footer ---- */
     .footer {
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-end;
+      gap: 2rem;
       padding: 1.5rem 2rem;
-      font-size: 1.2rem;
-    }
-    .contact {
-      display: flex;
-      align-items: center;
     }
     .contact a {
       display: flex;
       align-items: center;
-      text-decoration: none;
       color: inherit;
-      font-family: 'Playfair Display', serif;
+      text-decoration: none;
+      font-size: 1rem;
     }
-    .contact svg {
-      width: 1.2em;
-      height: 1.2em;
+    .contact a img {
+      width: 24px;
+      height: 24px;
       margin-right: 0.5em;
-      fill: #f0f0f0;
     }
 
     /* ---- Responsive ---- */
@@ -132,23 +119,20 @@
       .main {
         flex-direction: column;
         text-align: center;
-      }
-      .left, .right {
-        padding: 0;
-        width: 100%;
-      }
-      .left {
-        margin-bottom: 2rem;
+        padding: 2rem;
       }
       .footer {
         flex-direction: column;
         gap: 1rem;
-        text-align: center;
+      }
+      .image-placeholder {
+        width: 80%;
+        height: auto;
+        aspect-ratio: 3/4;
       }
     }
   </style>
 </head>
-
 <body>
   <div class="container">
     <div class="main">
@@ -162,26 +146,21 @@
       </div>
       <div class="right">
         <div class="image-placeholder">
-          Image
+          <img src="images/marcy.png" alt="Marcy Davis">
         </div>
       </div>
     </div>
 
     <div class="footer">
-      <!-- Instagram -->
       <div class="contact">
-        <a href="https://instagram.com/mars_studio" target="_blank">
-          <!-- Instagram SVG icon -->
-          <svg viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9S160.5 370.8 224.1 370.8 339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.3 0-74.7-33.4-74.7-74.7s33.4-74.7 74.7-74.7 74.7 33.4 74.7 74.7-33.4 74.7-74.7 74.7zm146.4-194.3c0 14.9-12.1 27-27 27-14.9 0-27-12.1-27-27 0-14.9 12.1-27 27-27 14.9 0 27 12.1 27 27zm76.1 27.2c-.7-15.9-4.1-31.6-9.9-46.1-5.8-14.5-14.1-27.5-25.3-38.7s-24.2-19.5-38.7-25.3c-14.5-5.8-30.2-9.2-46.1-9.9-16.2-.9-65-.9-81.2 0-15.9.7-31.6 4.1-46.1 9.9-14.5 5.8-27.5 14.1-38.7 25.3s-19.5 24.2-25.3 38.7c-5.8 14.5-9.2 30.2-9.9 46.1-.9 16.2-.9 65-.0 81.2.7 15.9 4.1 31.6 9.9 46.1 5.8 14.5 14.1 27.5 25.3 38.7s24.2 19.5 38.7 25.3c14.5 5.8 30.2 9.2 46.1 9.9 16.2.9 65 .9 81.2 0 15.9-.7 31.6-4.1 46.1-9.9 14.5-5.8 27.5-14.1 38.7-25.3s19.5-24.2 25.3-38.7c5.8-14.5 9.2-30.2 9.9-46.1.9-16.2.9-65 .0-81.2zM398.8 388c-7.8 19.6-23 34.8-42.6 42.6-29.5 11.7-99.5 9-132.2 9s-102.7 2.6-132.2-9c-19.6-7.8-34.8-23-42.6-42.6-11.7-29.5-9-99.5-9-132.2s-2.6-102.7 9-132.2c7.8-19.6 23-34.8 42.6-42.6 29.5-11.7 99.5-9 132.2-9s102.7-2.6 132.2 9c19.6 7.8 34.8 23 42.6 42.6 11.7 29.5 9 99.5 9 132.2s2.7 102.7-9 132.2z"/></svg>
-          mars_studio
+        <a href="https://instagram.com/_mars_studio_" target="_blank">
+          <img src="images/instagram.svg" alt="Instagram">
+          _mars_studio_
         </a>
       </div>
-
-      <!-- Email -->
       <div class="contact">
         <a href="mailto:marcy.davis@tcu.edu">
-          <!-- Email SVG icon -->
-          <svg viewBox="0 0 512 512"><path d="M502.3 190.8L327.4 338.7c-15.9 13.9-39.6 13.9-55.5 0L9.7 190.8C3.8 186.1 0 178.8 0 170.9V104c0-22.1 17.9-40 40-40h432c22.1 0 40 17.9 40 40v66.9c0 7.9-3.8 15.2-9.7 19.9zM64 208v208c0 22.1 17.9 40 40 40h304c22.1 0 40-17.9 40-40V208L327.4 355.9c-20.6 18-51.2 18-71.8 0L64 208z"/></svg>
+          <img src="images/email.svg" alt="Email">
           marcy.davis@tcu.edu
         </a>
       </div>
