@@ -2,192 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Marcy Davis | Sculpture & Installation</title>
-
-  <!-- Font: Playfair Display -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-
+  <title>John Doe</title>
   <style>
-    /* ---- Background and Gradient Animation Base ---- */
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body {
-      height: 100%;
-      font-family: 'Playfair Display', serif;
-      color: #f0f0f0;
-      background-color: #111;
-      background-image: radial-gradient(
-        circle at center,
-        rgba(241,194,125,0.07) 0%,   /* soft skin tone */
-        rgba(10,35,10,0.15) 70%       /* dark royal green */
-      );
-      background-size: 200% 200%;
-      background-position: 20% 20%;
-      background-repeat: no-repeat;
-      transition: background-position 5s ease;
-      overflow-x: hidden;
-    }
-    body:hover {
-      background-position: 80% 80%;
-    }
-
-    .container {
+    body {
+      font-family: Arial, sans-serif;
       display: flex;
-      flex-direction: column;
-      min-height: 100%;
-    }
-
-    /* ---- Main content ---- */
-    .main {
-      flex: 1;
-      display: flex;
-      align-items: center;
       justify-content: center;
-      padding: 2rem 5rem;
-      gap: 4rem;
-    }
-    .left  { flex: 1; animation: fadeIn 1s ease forwards; }
-    .right { flex: 1; display: flex; align-items: center; justify-content: center; animation: fadeIn 1s ease forwards 0.5s; }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    .name {
-      font-size: 3rem;
-      margin-bottom: 4rem;
-      opacity: 0;
-      animation: fadeIn 1s ease forwards;
-    }
-    .bio {
-      font-size: 1.225rem;
-      line-height: 1.6;
-      opacity: 0;
-      animation: fadeIn 1s ease forwards 0.7s;
-    }
-
-    /* ---- Image ---- */
-    .image-placeholder {
-      width: 585px;
-      height: 780px;
-      background: #222;
-      border-radius: 1rem;
-      overflow: hidden;
-      transition: transform 0.3s ease;
-    }
-    .image-placeholder:hover {
-      transform: scale(1.05);
-    }
-    .image-placeholder img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    /* ---- Footer: Contacts ---- */
-    .footer {
-      display: flex;
-      justify-content: flex-end;
-      gap: 2rem;
-      padding: 1.5rem 2rem;
-    }
-    .contact a {
-      display: flex;
       align-items: center;
-      color: inherit;
-      text-decoration: none;
-      font-size: 1rem; /* fallback/mobile */
+      height: 100vh;
+      margin: 0;
+      background: #f4f4f4;
     }
-    .contact a img {
-      width: 24px;
-      height: 24px;
-      margin-right: 0.5em;
-      filter: invert(1);
-    }
-    .contact a img.email-icon {
-      /* keeps email slightly smaller on desktop */
-      width: 21px;
-      height: 21px;
-    }
-
-    /* ---- Desktop-only footer sizing ---- */
-    @media (min-width: 769px) {
-      .contact a {
-        font-size: 1.25rem;
-      }
-      .contact a img {
-        width: 28px;
-        height: 28px;
-      }
-      .contact a img.email-icon {
-        width: 21px;
-        height: 21px;
-      }
-    }
-
-    /* ---- Mobile: force matching icon sizes ---- */
-    @media (max-width: 768px) {
-      .main {
-        flex-direction: column;
-        text-align: center;
-        padding: 2rem;
-      }
-      .footer {
-        flex-direction: column;
-        gap: 1rem;
-      }
-      .image-placeholder {
-        width: 80%;
-        height: auto;
-        aspect-ratio: 3/4;
-      }
-      /* override both icons to be identical on mobile */
-      .contact a img {
-        width: 20px;
-        height: 20px;
-      }
-
-      .contact a img.email-icon {
-      /* keeps email slightly smaller on mobile */
-      width: 18px;
-      height: 18px;
-     }
+    h1 {
+      font-size: 3em;
+      color: #333;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="main">
-      <div class="left">
-        <h1 class="name">Marcy Davis</h1>
-        <p class="bio">
-          Marcy is a third-year MFA candidate in Sculpture at Texas Christian University.
-          She earned her BFA with honors from the University of Texas at Arlington, with a minor in glass.
-          Her work draws from the remnants and ruins within the architecture of the body.
-        </p>
-      </div>
-      <div class="right">
-        <div class="image-placeholder">
-          <img src="images/marcy.png" alt="Marcy Davis">
-        </div>
-      </div>
-    </div>
-
-    <div class="footer">
-      <div class="contact">
-        <a href="https://instagram.com/_mars_studio_" target="_blank">
-          <img src="images/instagram.svg" alt="Instagram">
-          _mars_studio_
-        </a>
-      </div>
-      <div class="contact">
-        <a href="mailto:marcy.davis@tcu.edu">
-          <img src="images/email.svg" alt="Email" class="email-icon">
-          marcy.davis@tcu.edu
-        </a>
-      </div>
-    </div>
-  </div>
+  <h1>Yash Tyagi</h1>
 </body>
 </html>
